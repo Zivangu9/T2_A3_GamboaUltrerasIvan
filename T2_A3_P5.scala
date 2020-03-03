@@ -32,7 +32,7 @@ object Prueba{
 		println(unionListas(lista1,lista2))
 	}
 	def unionListas(lista1:List[String],lista2:List[String]): List[String] = {
-		lista1.union(lista2).distinct
+		lista1.concat(lista2).distinct
 	}
 	def interseccionListas(lista1:List[String],lista2:List[String]): List[String] = {
 		lista1.intersect(lista2)

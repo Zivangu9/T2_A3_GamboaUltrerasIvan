@@ -7,15 +7,11 @@ import scala.io.StdIn._
 object Prueba{	
 	def main(args: Array[String]): Unit ={
 		var lista = llenarLista(30)
-		//lista = limpiarRepetidos(lista)
 		println("Palabras palindromas de la lista: ")
 		println(obtenerPalindromas(lista))
 	}
 	def obtenerPalindromas(palabras:List[String]): List[String] = {
 		palabras.filter(x => (x==x.reverse))
-	}
-	def limpiarRepetidos(palabras:List[String]): List[String] = {
-		palabras.distinct
 	}
 	def llenarLista(tam:Int): List[String] = {
 		var lista = List[String]()

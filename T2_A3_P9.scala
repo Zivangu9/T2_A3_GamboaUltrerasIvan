@@ -7,7 +7,7 @@
 import scala.io.StdIn._
 object Prueba{	
 	def main(args: Array[String]): Unit ={
-		var lista = llenarLista(5,100)
+		var lista = llenarLista(10,10)
 		//lista = limpiarRepetidos(lista)
 		println(lista)
 		println("Numero Primos: ")
@@ -16,6 +16,8 @@ object Prueba{
 		println(obtenerSumatoria(lista))
 		println("Promedio: ")
 		println(obtenerPromedio(lista))
+		println("factoriales: ")
+		println(obtenerFactoriales(lista))
 	}
 	def obtenerNumPrim(numeros:List[Int]): List[Int] = {
 		numeros.filter(esPrimo(_))
@@ -38,6 +40,19 @@ object Prueba{
 	def obtenerPromedio(numeros:List[Int]): Double = {
 		obtenerSumatoria(numeros)/numeros.length
 	}
+	def obtenerFactoriales(numeros:List[Int]): List[Int] = {
+		var factoriales = List[Int]()
+		for(n<-numeros){
+			factoriales = factoriales :+ factorial(n)
+		}
+		factoriales
+	}
+	def factorial(n: Int): Int = {
+      if (n == 0) 
+          return 1
+      else
+          return n * factorial(n-1)
+    }
 	def llenarLista(tam:Int,max:Int): List[Int] = {
 		var lista = List[Int]()
 		for(i<-0 until tam)
